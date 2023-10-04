@@ -54,15 +54,16 @@ void thirdTask() {
 void fourthTask() {
   stdout.write("Введите Ваше слово: ");
   String word = stdin.readLineSync() ?? "";
-  List<String> reverse = []; 
-  List<String> reverseWord = []; 
-
-  for (int i = 0; i < word.length; i++) {
-    reverse.add(word[i]);
-  }
-
-reverseWord = reverse.reversed.toList();
-print(reverseWord.join(""));
   
+  word = word.replaceAll(" ", "").toLowerCase();
+  
+  String reverseWord = word.split('').reversed.join('');
+
+  if (word == reverseWord) {
+    print("True");
+  } else {
+    print("False");
+  }
 }
+
 
